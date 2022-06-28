@@ -1,4 +1,4 @@
-package popUp;
+package extras;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -20,7 +20,7 @@ public class popUp extends JFrame {
 	public popUp(String texto) {
 		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 222, 144);
+		setBounds(100, 100, 252, 144);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);

@@ -29,5 +29,9 @@ public interface AdministradorDeColas {
 //siempre que el TDA esté inicializado y cola no vacías
 	
 	boolean liberarPuesto(int puesto);
+	
+	int prioridad();
+	
+	boolean colaVacia();
 
 }

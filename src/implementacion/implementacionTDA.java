@@ -111,7 +111,7 @@ public class implementacionTDA implements AdministradorDeColas {
 
 	@Override
 	public int puestoDelElem(int idElemento) {
-		if (inicializado && !cola.colaVacia()) {
+		if (inicializado) {
 			return diccionario.recuperar(idElemento);
 		} else
 			return -1;
@@ -124,13 +124,32 @@ public class implementacionTDA implements AdministradorDeColas {
 		}
 		return null;
 	}
-	
+
 	@Override
 	public boolean liberarPuesto(int puesto) {
-		if(inicializado && !conjunto.pertenece(puesto)) {
+		if (inicializado && !conjunto.pertenece(puesto)) {
 			conjunto.agregar(puesto);
 			return true;
-		}else
+		} else
+			return false;
+	}
+
+	@Override
+	public int prioridad() {
+		if (inicializado) {
+			if (!cola.colaVacia())
+				return cola.prioridad();
+			else
+				return -1;
+		} else
+			return -1;
+	}
+	
+	@Override
+	public boolean colaVacia() {
+		if(cola.colaVacia())
+			return true;
+		else
 			return false;
 	}
 
@@ -164,5 +183,6 @@ public class implementacionTDA implements AdministradorDeColas {
 		}
 		return contador + 1;
 	}
+
 
 }
